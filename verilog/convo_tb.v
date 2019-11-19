@@ -112,9 +112,9 @@ module top_tb;
     
     
     $readmemh("./fix_input_0.hex", in_data);
-    for (i = 0; i < 784; i=i+2)
+    for (i = 0; i < 784; i=i+4)
     begin
-      M0.bram[i/2] = {in_data[i],in_data[i+1]};
+      M0.bram[i/4] = {in_data[i],in_data[i+1],in_data[i+2],in_data[i+3]};
     end
     num1 = 0;
     gf1 = $fopen( "./frlu1_golden.hex", "r");
@@ -147,49 +147,28 @@ module top_tb;
     for (i = 0; i < num1; i=i+4)
     begin
       if(M1.bram[i/4] !== {GOLDEN1[i],GOLDEN1[i+1],GOLDEN1[i+2],GOLDEN1[i+3]})begin
-        $display("DM[%4d] = %h, expect = %h", i/4, M1.bram[i/4], {GOLDEN1[i],GOLDEN1[i+1],GOLDEN1[i+2],GOLDEN1[i+3]});
+        $display("DM1[%4d] = %h, expect = %h", i/4, M1.bram[i/4], {GOLDEN1[i],GOLDEN1[i+1],GOLDEN1[i+2],GOLDEN1[i+3]});
         err = err + 1;
+      end else begin
+        $display("DM1[%4d] = %h, pass",  i/4, M1.bram[i/4]);
       end
-      
-      
-      else
-      begin
-        $display("DM[%4d] = %h, pass",  i, M1.bram[i]);
-      end
-      
+      if(M2.bram[i/4] !== {GOLDEN2[i],GOLDEN2[i+1],GOLDEN2[i+2],GOLDEN2[i+3]})begin
+        $display("DM2[%4d] = %h, expect = %h", i/4, M2.bram[i/4], {GOLDEN2[i],GOLDEN2[i+1],GOLDEN2[i+2],GOLDEN2[i+3]});
+        err = err + 1;
+      end else begin
+        $display("DM2[%4d] = %h, pass",  i/4, M2.bram[i/4]);
+      end      
     end
+    result(err, num1+num2);
     $finish;
   end
-	
-  initial
-  begin
-    #(`CYCLE*`MAX)
-    for (i = 0; i < num; i=i+1)
-    begin
-      if(M1.bram[i] !== GOLDEN[i])begin
-        $display("DM[%4d] = %h, expect = %h", i, M1.bram[i], GOLDEN[i]);
-        err = err + 1;
-      end
-      
-      
-      else
-      begin
-        $display("DM[%4d] = %h, pass",  i, M1.bram[i]);
-      end
-      
-    end
-    $display("SIM_END no finish!!!");
-    result(num, num);
-    $finish;
-  end
+ 
   
   task result;
     input integer err;
     input integer num;
     integer rf;
     begin     
-			rf = $fopen({"./result_rtl.txt"}, "w");
-      $fdisplay(rf, "%d,%d", num - err, num);
       if (err === 0)
       begin
         $display("\n");
