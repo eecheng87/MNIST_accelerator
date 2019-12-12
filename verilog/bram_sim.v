@@ -17,8 +17,10 @@ integer i;
 assign addrW = addr >> 2;
 
 always@(posedge clk or negedge rst)begin
-  if(W_req == 4'b1111 && R_req)
+  if(W_req == 4'b1111 && R_req)begin
     bram[addrW] <= W_data;
+	//if(addrW==0)$display("%d",W_data);
+	end
 end
 
 always@(posedge clk or negedge rst)begin

@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module conv(
     input rst,
     input clk, 
@@ -65,6 +66,9 @@ reg [7:0]convo_ans1[3:0];
 reg [7:0]convo_ans2[3:0];
 reg [2:0]convo_time;
 reg [7:0]write_addr;
+reg [4:0]row_addr_index; // for addr offset which will be access next row
+reg running_flag;
+reg waiting_req;
 integer i;
 
 initial begin
@@ -94,10 +98,13 @@ initial begin
     convo_time = 0;
     write_addr = 0;
     global_row_index <= 3;
+    running_flag <= 0;
+    row_addr_index <= 3;
+    waiting_req <= 1;
 end
 
 always @(posedge clk) begin
-    if(start == 1 && global_state == 0)begin
+    if((start == 1 && global_state == 0) || (global_state == 0 && running_flag == 1))begin
         M0_W_req <= 0;
         M0_W_data <= 0;
         M1_addr <= 0;
@@ -108,21 +115,25 @@ always @(posedge clk) begin
         M2_R_req <= 0;
         M2_W_req <= 0;
         M2_W_data <= 0;
+	running_flag <= 1;
         case (current_line)
             2'b00:begin
                 if(line_buf_setting_time < 7)begin
                     if(req_state)begin
                         M0_R_req <= 1;
-                        M0_addr <= line_buf_setting_time;
+                        M0_addr <= line_buf_setting_time<<2; // hi
                         req_state <= 0;
+			//$display("check: %d",line_buf_setting_time);
                     end else begin
                         // data already
+			#1
                         line_buffer1[line_buf_setting_time<<2] <= M0_R_data[31:24];
                         line_buffer1[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
                         line_buffer1[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
                         line_buffer1[(line_buf_setting_time<<2)+3] <= M0_R_data[7:0];
                         req_state <= 1;
                         line_buf_setting_time <= line_buf_setting_time + 1;
+			//$display("line1 %d",M0_R_data);
                     end
                 end else begin
                     line_buf_setting_time <= 0;
@@ -133,10 +144,11 @@ always @(posedge clk) begin
                 if(line_buf_setting_time < 7)begin
                     if(req_state)begin
                         M0_R_req <= 1;
-                        M0_addr <= line_buf_setting_time;
+                        M0_addr <= (7+line_buf_setting_time)<<2; // hi
                         req_state <= 0;
                     end else begin
                         // data already
+			#1;
                         line_buffer2[line_buf_setting_time<<2] <= M0_R_data[31:24];
                         line_buffer2[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
                         line_buffer2[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
@@ -153,10 +165,11 @@ always @(posedge clk) begin
                 if(line_buf_setting_time < 7)begin
                     if(req_state)begin
                         M0_R_req <= 1;
-                        M0_addr <= line_buf_setting_time;
+                        M0_addr <= (14+line_buf_setting_time)<<2; // hi
                         req_state <= 0;
                     end else begin
                         // data already
+			#1;
                         line_buffer3[line_buf_setting_time<<2] <= M0_R_data[31:24];
                         line_buffer3[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
                         line_buffer3[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
@@ -166,6 +179,7 @@ always @(posedge clk) begin
                     end
                 end else begin
                     // three line buffer is initial complete
+			line_buf_setting_time <=0;
                     global_state <= 1;
                 end
             end 
@@ -196,11 +210,13 @@ always @(posedge clk) begin
         window[8] <= line_buffer3[2];
         global_state <= global_state + 1;
     end else if(global_state == 2)begin
+	//$display("enter state 2");
         case (convolution_state)
             3'b000: begin
                 for(i = 0; i < 9; i = i + 1)begin
                     convo_p1[i] <= $signed(kernel1[i])*$signed(window[i]);
                     convo_p2[i] <= $signed(kernel2[i])*$signed(window[i]);
+			//if(write_addr == 0)$display("addr: %d %d",write_addr,window[i]);
                 end
                 convolution_state <= convolution_state + 1;
             end
@@ -220,18 +236,32 @@ always @(posedge clk) begin
                 convo_ans2[convo_time] <= (convo_sum2[7:0]>8'b10000000)?convo_sum2[11:4]+1:convo_sum2[11:4];
                 convo_time <= convo_time + 1;
                 convolution_state <= convolution_state + 1;
+		//$display("addr: %d %d",write_addr,{convo_ans1[0],convo_ans1[1],convo_ans1[2],convo_ans1[3]});
             end
-            3'b011: begin
+	    3'b011: begin
+			convo_ans1[0] <= convo_ans1[0][7]?0:convo_ans1[0];
+			convo_ans1[1] <= convo_ans1[1][7]?0:convo_ans1[1];
+			convo_ans1[2] <= convo_ans1[2][7]?0:convo_ans1[2];
+			convo_ans1[3] <= convo_ans1[3][7]?0:convo_ans1[3];
+			convo_ans2[0] <= convo_ans2[0][7]?0:convo_ans2[0];
+			convo_ans2[1] <= convo_ans2[1][7]?0:convo_ans2[1];
+			convo_ans2[2] <= convo_ans2[2][7]?0:convo_ans2[2];
+			convo_ans2[3] <= convo_ans2[3][7]?0:convo_ans2[3];
+			convolution_state <= convolution_state + 1;
+		end
+            3'b100: begin
                 if(convo_time == 4)begin
-                    M1_R_req <= 0;
-                    M1_W_data <= {convo_ans1[write_addr<<2],convo_ans1[(write_addr<<2)+1],convo_ans1[(write_addr<<2)+2],convo_ans1[(write_addr<<2)+3]};
-                    M1_W_req <= 1;
-                    M1_addr <= write_addr;
-                    M2_R_req <= 0;
-                    M2_W_data <= {convo_ans2[write_addr<<2],convo_ans2[(write_addr<<2)+1],convo_ans2[(write_addr<<2)+2],convo_ans2[(write_addr<<2)+3]};
-                    M2_W_req <= 1;
-                    M2_addr <= write_addr;
+                    M1_R_req <= 1;
+                    M1_W_data <= {convo_ans1[0],convo_ans1[1],convo_ans1[2],convo_ans1[3]};
+                    M1_W_req <= 4'b1111;
+                    M1_addr <= write_addr<<2;
+                    M2_R_req <= 1;
+                    M2_W_data <= {convo_ans2[0],convo_ans2[1],convo_ans2[2],convo_ans2[3]};
+                    M2_W_req <= 4'b1111;
+                    M2_addr <= write_addr<<2;
                     write_addr <= write_addr + 1;
+		    convo_time <= 0;
+		    //$display("addr: %d %d",write_addr,{convo_ans1[0],convo_ans1[1],convo_ans1[2],convo_ans1[3]});
                 end
                 global_state <= 3;
                 convolution_state <= 0;
@@ -240,6 +270,7 @@ always @(posedge clk) begin
 		end
         endcase
     end else if(global_state == 3)begin
+	//$display("enter state 3");
         if(write_addr == 169)begin
             // finsish
             finish <= 1;
@@ -256,13 +287,15 @@ always @(posedge clk) begin
             global_state <= 5;
         end
     end else if(global_state == 4)begin
+	//$display("enter state 4");
         if(line_buf_setting_time < 7)begin
             if(req_state)begin
                 M0_R_req <= 1;
-                M0_addr <= line_buf_setting_time;
+                M0_addr <= (row_addr_index*7 + line_buf_setting_time)<<2; // hi
                 req_state <= 0;
             end else begin
                 // data already
+		#1;
                 line_buffer3[line_buf_setting_time<<2] <= M0_R_data[31:24];
                 line_buffer3[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
                 line_buffer3[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
@@ -272,9 +305,11 @@ always @(posedge clk) begin
             end
         end else begin
             line_buf_setting_time <= 0;
+	    row_addr_index <= row_addr_index + 1;
             global_state <= 1;
         end       
     end else if(global_state == 5)begin
+	//$display("enter state 5");
         window[0] <= window[1];
         window[1] <= window[2];
         window[3] <= window[4];
@@ -289,5 +324,65 @@ always @(posedge clk) begin
     end
 end
 
+/*
+always @(negedge clk) begin
+	if(waiting_req&&((start == 1 && global_state == 0) || (global_state == 0 && running_flag == 1)))begin
+		waiting_req <= 0;
+	end else if((start == 1 && global_state == 0) || (global_state == 0 && running_flag == 1))begin
+		waiting_req <= 1;
+	        case (current_line)
+	            2'b00:begin
+	                if(line_buf_setting_time < 7)begin
+	                    if(!req_state)begin
+	                        line_buffer1[line_buf_setting_time<<2] <= M0_R_data[31:24];
+	                        line_buffer1[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
+	                        line_buffer1[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
+	                        line_buffer1[(line_buf_setting_time<<2)+3] <= M0_R_data[7:0];
+	                        req_state <= 1;
+	                        line_buf_setting_time <= line_buf_setting_time + 1;
+	                    end else begin
+	                    line_buf_setting_time <= 0;
+	                    current_line <= current_line + 1;
+	                    end
+                	end
+            	     end
+            	    2'b01:begin
+            		    if(line_buf_setting_time < 7)begin
+            		        if(!req_state)begin
+                        // data already
+                        line_buffer2[line_buf_setting_time<<2] <= M0_R_data[31:24];
+                        line_buffer2[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
+                        line_buffer2[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
+                        line_buffer2[(line_buf_setting_time<<2)+3] <= M0_R_data[7:0];
+                        req_state <= 1;
+                        line_buf_setting_time <= line_buf_setting_time + 1;
+                    end
+                end else begin
+                    line_buf_setting_time <= 0;
+                    current_line <= current_line + 1;
+                end
+            end
+            	    2'b10:begin
+           		     if(line_buf_setting_time < 7)begin
+           		         if(!req_state)begin
+                        // data already
+                        line_buffer3[line_buf_setting_time<<2] <= M0_R_data[31:24];
+                        line_buffer3[(line_buf_setting_time<<2)+1] <= M0_R_data[23:16];
+                        line_buffer3[(line_buf_setting_time<<2)+2] <= M0_R_data[15:8];
+                        line_buffer3[(line_buf_setting_time<<2)+3] <= M0_R_data[7:0];
+                        req_state <= 1;
+                        line_buf_setting_time <= line_buf_setting_time + 1;
+           		  	end 
+			    end else begin
+                    // three line buffer is initial complete
+                    global_state <= 1;
+                	end
+           	 end 
+            default: begin
+		end
+        endcase
+	end
 
+end
+*/
 endmodule
