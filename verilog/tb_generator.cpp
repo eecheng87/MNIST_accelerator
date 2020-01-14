@@ -16,10 +16,10 @@ string bin_to_hex(string);
 int main(){
 	ifstream ifsi;
 	ofstream ifso;
-	//ifsi.open("../test_data/testx0.txt",ios::in);
+	//ifsi.open("testx0.txt",ios::in);
 	//ifso.open("fix_input_0.txt",ios::out|ios::trunc);
-	//ifsi.open("rlu1_golden.txt",ios::in);
-	//ifso.open("frlu1_golden.txt",ios::out|ios::trunc);
+	ifsi.open("rlu1_golden.txt",ios::in);
+	ifso.open("frlu1_golden.txt",ios::out|ios::trunc);
 	//ifsi.open("rlu2_golden.txt",ios::in);
 	//ifso.open("frlu2_golden.txt",ios::out|ios::trunc);
 	//ifsi.open("k1.txt",ios::in);
@@ -27,15 +27,21 @@ int main(){
 
 	//ifsi.open("k2.txt",ios::in);
 	//ifso.open("fk2.txt",ios::out|ios::trunc);	
-	ifsi.open("b1b2.txt",ios::in);
-	ifso.open("fb1b2.txt",ios::out|ios::trunc);
+	//ifsi.open("b1b2.txt",ios::in);
+	//ifso.open("fb1b2.txt",ios::out|ios::trunc);
 	double d;
 	
 	ifsi>>d;
+	int count = 0;
 	while(ifsi){
 		d = d - fmod(d,pow(2,-FB));
 		//if(d!=0)cout<<d<<endl;
-		ifso<<convert(d)<<endl;
+		ifso<<convert(d);
+		count++;
+		if(count==4){
+			count = 0;
+			ifso<<"\n";
+		}
 		ifsi>>d;
 	}
 	ifsi.close();

@@ -1,0 +1,694 @@
+
+*** Running vivado
+    with args -log mnist_design_conv_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mnist_design_conv_0_0.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source mnist_design_conv_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 320.441 ; gain = 70.102
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/mnist_convo_circuit'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2018.3/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 351.695 ; gain = 31.254
+Command: synth_design -top mnist_design_conv_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 52828 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 470.246 ; gain = 97.230
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mnist_design_conv_0_0' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ip/mnist_design_conv_0_0/synth/mnist_design_conv_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'conv' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:2]
+	Parameter k1_1 bound to: 7 - type: integer 
+	Parameter k1_2 bound to: 3 - type: integer 
+	Parameter k1_3 bound to: 5 - type: integer 
+	Parameter k1_4 bound to: 1 - type: integer 
+	Parameter k1_5 bound to: 10 - type: integer 
+	Parameter k1_6 bound to: 5 - type: integer 
+	Parameter k1_7 bound to: 8 - type: integer 
+	Parameter k1_8 bound to: 8 - type: integer 
+	Parameter k1_9 bound to: 253 - type: integer 
+	Parameter k2_1 bound to: 3 - type: integer 
+	Parameter k2_2 bound to: 13 - type: integer 
+	Parameter k2_3 bound to: 15 - type: integer 
+	Parameter k2_4 bound to: 254 - type: integer 
+	Parameter k2_5 bound to: 5 - type: integer 
+	Parameter k2_6 bound to: 8 - type: integer 
+	Parameter k2_7 bound to: 234 - type: integer 
+	Parameter k2_8 bound to: 233 - type: integer 
+	Parameter k2_9 bound to: 231 - type: integer 
+	Parameter bias bound to: 255 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'conv' (1#1) [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'mnist_design_conv_0_0' (2#1) [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ip/mnist_design_conv_0_0/synth/mnist_design_conv_0_0.v:58]
+WARNING: [Synth 8-3331] design conv has unconnected port rst
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[31]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[30]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[29]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[28]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[27]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[26]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[25]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[24]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[23]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[22]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[21]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[20]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[19]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[18]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[17]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[16]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[15]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[14]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[13]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[12]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[11]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[10]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[9]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[8]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[7]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[6]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[5]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[4]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[3]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[2]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[1]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[0]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[31]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[30]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[29]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[28]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[27]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[26]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[25]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[24]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[23]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[22]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[21]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[20]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[19]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[18]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[17]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[16]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[15]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[14]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[13]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[12]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[11]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[10]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[9]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[8]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[7]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[6]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[5]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[4]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[3]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[2]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[1]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 558.398 ; gain = 185.383
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 558.398 ; gain = 185.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 558.398 ; gain = 185.383
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 903.363 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 903.363 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.740 . Memory (MB): peak = 907.066 ; gain = 3.703
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'M2_addr_reg[31:0]' into 'M1_addr_reg[31:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:114]
+INFO: [Synth 8-4471] merging register 'M2_R_req_reg' into 'M1_R_req_reg' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:115]
+INFO: [Synth 8-4471] merging register 'M2_W_req_reg[3:0]' into 'M1_W_req_reg[3:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:116]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_sum2_reg' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:228]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[6]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_sum1_reg' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:224]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[6]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[8]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[8]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[7]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[7]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[3]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[3]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[5]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[5]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[4]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[4]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[0]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[0]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[2]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[2]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p2_reg[1]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'convo_p1_reg[1]' and it is trimmed from '16' to '12' bits. [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:217]
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "line_buffer2_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "window" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "convo_ans1_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "convo_ans1_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "convo_ans1_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "convo_ans1_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "M1_addr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "global_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "global_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "finish" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'current_line_reg' in module 'conv'
+INFO: [Synth 8-802] inferred FSM for state register 'convolution_state_reg' in module 'conv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_line_reg' using encoding 'one-hot' in module 'conv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                            00001 |                              000
+                 iSTATE0 |                            00010 |                              001
+                 iSTATE1 |                            00100 |                              010
+                 iSTATE2 |                            01000 |                              011
+                 iSTATE3 |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'convolution_state_reg' using encoding 'one-hot' in module 'conv'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     12 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 117   
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 91    
+	   4 Input      8 Bit        Muxes := 15    
+	   5 Input      8 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 179   
+	   4 Input      1 Bit        Muxes := 59    
+	   3 Input      1 Bit        Muxes := 90    
+	   5 Input      1 Bit        Muxes := 12    
+	   7 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module conv 
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     12 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 117   
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 91    
+	   4 Input      8 Bit        Muxes := 15    
+	   5 Input      8 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 179   
+	   4 Input      1 Bit        Muxes := 59    
+	   3 Input      1 Bit        Muxes := 90    
+	   5 Input      1 Bit        Muxes := 12    
+	   7 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'window_reg[2][7:0]' into 'window_reg[2][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[4][7:0]' into 'window_reg[4][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[5][7:0]' into 'window_reg[5][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[7][7:0]' into 'window_reg[7][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[8][7:0]' into 'window_reg[8][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[1][7:0]' into 'window_reg[1][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[1][7:0]' into 'window_reg[1][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[2][7:0]' into 'window_reg[2][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[3][7:0]' into 'window_reg[3][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[4][7:0]' into 'window_reg[4][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[5][7:0]' into 'window_reg[5][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[6][7:0]' into 'window_reg[6][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[7][7:0]' into 'window_reg[7][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[8][7:0]' into 'window_reg[8][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-4471] merging register 'window_reg[0][7:0]' into 'window_reg[0][7:0]' [d:/mnist_vivado/mnist_vivado.srcs/sources_1/bd/mnist_design/ipshared/d01e/mnist_convo_circuit.v:202]
+INFO: [Synth 8-5546] ROM "line_buffer1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "line_buffer1_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "line_buffer2_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "global_state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design conv has unconnected port rst
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[31]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[30]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[29]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[28]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[27]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[26]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[25]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[24]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[23]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[22]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[21]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[20]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[19]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[18]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[17]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[16]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[15]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[14]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[13]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[12]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[11]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[10]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[9]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[8]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[7]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[6]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[5]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[4]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[3]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[2]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[1]
+WARNING: [Synth 8-3331] design conv has unconnected port M1_R_data[0]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[31]
+WARNING: [Synth 8-3331] design conv has unconnected port M2_R_data[30]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[7][1]' (FDE) to 'inst/convo_p1_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[7][2]' (FDE) to 'inst/convo_p1_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[4][0]' (FDE) to 'inst/convo_p1_reg[4][1]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[5][0]' (FDE) to 'inst/convo_p2_reg[5][1]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[5][1]' (FDE) to 'inst/convo_p2_reg[5][2]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[5][2]' (FDE) to 'inst/convo_p2_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[5][3]' (FDE) to 'inst/convo_p1_reg[5][0]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[5][10]' (FDE) to 'inst/convo_p2_reg[5][11]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[3][0]' (FDE) to 'inst/convo_p1_reg[7][0]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p2_reg[3][1]' (FDE) to 'inst/convo_p1_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[7][0]' (FDE) to 'inst/convo_p1_reg[7][1]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[7][1]' (FDE) to 'inst/convo_p1_reg[7][2]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[7][2]' (FDE) to 'inst/convo_p1_reg[6][0]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[7][10]' (FDE) to 'inst/convo_p1_reg[7][11]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[6][0]' (FDE) to 'inst/convo_p1_reg[6][1]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[4][0]' (FDE) to 'inst/convo_p1_reg[6][1]'
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[6][1]' (FDE) to 'inst/convo_p1_reg[6][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/convo_p1_reg[6][2] )
+INFO: [Synth 8-3886] merging instance 'inst/convo_p1_reg[6][10]' (FDE) to 'inst/convo_p1_reg[6][11]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst/finish_reg )
+INFO: [Synth 8-3886] merging instance 'inst/M1_W_req_reg[0]' (FDRE) to 'inst/M1_W_req_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_W_req_reg[1]' (FDRE) to 'inst/M1_W_req_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_W_req_reg[2]' (FDRE) to 'inst/M1_W_req_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[0]' (FDRE) to 'inst/M1_addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[1]' (FDRE) to 'inst/M1_addr_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[10]' (FDRE) to 'inst/M1_addr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[11]' (FDRE) to 'inst/M1_addr_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[12]' (FDRE) to 'inst/M1_addr_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[13]' (FDRE) to 'inst/M1_addr_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[14]' (FDRE) to 'inst/M1_addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[15]' (FDRE) to 'inst/M1_addr_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[16]' (FDRE) to 'inst/M1_addr_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[17]' (FDRE) to 'inst/M1_addr_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[18]' (FDRE) to 'inst/M1_addr_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[19]' (FDRE) to 'inst/M1_addr_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[20]' (FDRE) to 'inst/M1_addr_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[21]' (FDRE) to 'inst/M1_addr_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[22]' (FDRE) to 'inst/M1_addr_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[23]' (FDRE) to 'inst/M1_addr_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[24]' (FDRE) to 'inst/M1_addr_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[25]' (FDRE) to 'inst/M1_addr_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[26]' (FDRE) to 'inst/M1_addr_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[27]' (FDRE) to 'inst/M1_addr_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[28]' (FDRE) to 'inst/M1_addr_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[29]' (FDRE) to 'inst/M1_addr_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/M1_addr_reg[30]' (FDRE) to 'inst/M1_addr_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/M1_addr_reg[31] )
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[0]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[1]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[2]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[3]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[4]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[5]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[6]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[7]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[8]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[9]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[10]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[11]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[12]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[13]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[14]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[15]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[16]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[17]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[18]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[19]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[20]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[21]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[22]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[23]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[24]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[25]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[26]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[27]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[28]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[29]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[30]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_data_reg[31]' (FDRE) to 'inst/M0_W_req_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_req_reg[0]' (FDRE) to 'inst/M0_W_req_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_req_reg[1]' (FDRE) to 'inst/M0_W_req_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_W_req_reg[2]' (FDRE) to 'inst/M0_W_req_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/M0_W_req_reg[3] )
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[0]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[1]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[10]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[11]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[12]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[13]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[14]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[15]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[16]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[17]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[18]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[19]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[20]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[21]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[22]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[23]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[24]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[25]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[26]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[27]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/M0_addr_reg[28]' (FDRE) to 'inst/M0_addr_reg[31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/M0_addr_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/convo_p2_reg[6][0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:31 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:31 . Memory (MB): peak = 907.066 ; gain = 534.051
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:02 ; elapsed = 00:01:34 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:05 ; elapsed = 00:01:37 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:05 ; elapsed = 00:01:37 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:05 ; elapsed = 00:01:38 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:05 ; elapsed = 00:01:38 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:05 ; elapsed = 00:01:38 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:05 ; elapsed = 00:01:38 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    83|
+|2     |LUT1   |    36|
+|3     |LUT2   |   148|
+|4     |LUT3   |   227|
+|5     |LUT4   |   162|
+|6     |LUT5   |   250|
+|7     |LUT6   |   413|
+|8     |MUXF7  |    50|
+|9     |FDRE   |  1141|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  2510|
+|2     |  inst   |conv   |  2510|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:05 ; elapsed = 00:01:38 . Memory (MB): peak = 920.813 ; gain = 547.797
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 85 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:01:20 . Memory (MB): peak = 920.813 ; gain = 199.129
+Synthesis Optimization Complete : Time (s): cpu = 00:01:06 ; elapsed = 00:01:39 . Memory (MB): peak = 920.813 ; gain = 547.797
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 133 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'mnist_design_conv_0_0' is not ideal for floorplanning, since the cellview 'conv' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 920.813 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+217 Infos, 122 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:01:44 . Memory (MB): peak = 920.813 ; gain = 559.262
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 920.813 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/mnist_vivado/mnist_vivado.runs/mnist_design_conv_0_0_synth_1/mnist_design_conv_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mnist_design_conv_0_0, cache-ID = 73c1304b507cddf1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 920.813 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/mnist_vivado/mnist_vivado.runs/mnist_design_conv_0_0_synth_1/mnist_design_conv_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mnist_design_conv_0_0_utilization_synth.rpt -pb mnist_design_conv_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 14 13:58:30 2020...
