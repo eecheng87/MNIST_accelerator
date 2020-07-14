@@ -1,4 +1,5 @@
 # MNIST_accelerator
+Accelerating CNN in hardware
 
 Along with increasing of AI computing, software can't fulfill our expectation anymore ( in speed performance ). 
 On the otherhand, using hardware to implement specific algorithm is getting popular. This project is based on this aspect,
